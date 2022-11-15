@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>879</width>
+    <height>398</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButtonStart">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>90</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start Listening</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonStop">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>140</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Take snapshot</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelCount">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>50</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelCountI">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>20</y>
+      <width>75</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Images:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PointClouds:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonAddPair">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>236</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add pair</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditImageTopic">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>18</y>
+      <width>361</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>unitycam/image_raw</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditPointCloudTopic">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>48</y>
+      <width>361</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>unitylidar/points_raw</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonExractData">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>190</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Extract data</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonimgleft">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>150</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>←</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>90</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select image</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>90</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select pointcloud</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonimgup">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>110</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>↑</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonimgright">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>150</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>→</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonimgdown">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>190</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>↓</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBoximgx">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>326</x>
+      <y>245</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-100000</number>
+    </property>
+    <property name="maximum">
+     <number>100000</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>250</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonpcprev">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>←</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonpcnext">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>→</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBoxpcindex">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>190</y>
+      <width>53</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100000</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>193</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Index:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>250</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Max:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelimgmaxx">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>250</y>
+      <width>75</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>276</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Y:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelimgmaxy">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>276</y>
+      <width>75</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBoximgy">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>326</x>
+      <y>271</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-100000</number>
+    </property>
+    <property name="maximum">
+     <number>100000</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>276</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Max:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>196</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Max:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelpcmax">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>196</y>
+      <width>75</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>106</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>The current selection is vizualized under extrinsicCalib/pointCloudPreview</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonwritetofile">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>283</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Write to file</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>220</y>
+      <width>271</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Current point: (in Unity coords)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>240</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelpvalx">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>240</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelpvaly">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>254</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>254</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>y</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelpvalz">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>267</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>267</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>z</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>286</y>
+      <width>271</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Current point: (in ROS coords)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelpvalx_2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>306</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>333</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>z</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelpvaly_2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>320</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelpvalz_2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>333</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>306</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>320</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>y</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>350</y>
+      <width>271</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Convert Unity → ROS: (z, -x, y)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_21">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>370</y>
+      <width>271</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Convert ROS → Unity: (-y, z, x)</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButtonStart</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonStartPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>151</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>67</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonStop</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonStopPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>209</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonAddPair</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonAddPairPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>143</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>75</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonExractData</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonExtractDataPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>80</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonimgright</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotimgright()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>513</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonimgup</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotimgup()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>366</x>
+     <y>130</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>509</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonimgleft</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotimgleft()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>504</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonimgdown</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotimgdown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>375</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>501</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoximgx</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotsetimgx(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>376</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoximgy</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotsetimgy(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>283</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonAddPair</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotaddpair()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>198</x>
+     <y>250</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>77</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonwritetofile</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotwrite()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>269</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonpcnext</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotpcnext()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>728</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>804</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonpcprev</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotpcprev()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>734</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxpcindex</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotsetpc(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>678</x>
+     <y>203</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>812</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotButtonStartPressed()</slot>
+  <slot>slotButtonStopPressed()</slot>
+  <slot>slotButtonAddPairPressed()</slot>
+  <slot>slotButtonExtractDataPressed()</slot>
+  <slot>slotimgleft()</slot>
+  <slot>slotimgup()</slot>
+  <slot>slotimgright()</slot>
+  <slot>slotimgdown()</slot>
+  <slot>slotsetimgx(int)</slot>
+  <slot>slotsetimgy(int)</slot>
+  <slot>slotaddpair()</slot>
+  <slot>slotwrite()</slot>
+  <slot>slotpcnext()</slot>
+  <slot>slotpcprev()</slot>
+  <slot>slotsetpc(int)</slot>
+ </slots>
+</ui>

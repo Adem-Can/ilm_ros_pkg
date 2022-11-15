@@ -1,0 +1,3 @@
+sensor_msgs/PointCloud2 pointCloud
+ColorArray colorscam1
+ColorArray colorscam2
